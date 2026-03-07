@@ -25,8 +25,8 @@ params:
     - posts
 
   homeInfoParams:
-    Title: "Sanket Bijawe"
-    Content: "The 2am Writings"
+    Title: "The 2am Writings"
+    Content: "Things that felt worth writing down at 2am"
 
   fuseOpts:
     isCaseSensitive: false
