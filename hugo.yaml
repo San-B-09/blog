@@ -1,0 +1,67 @@
+baseURL: "https://blog.sanket0x.com/"
+languageCode: "en-us"
+title: "Sanket Bijawe"
+theme: "PaperMod"
+
+enableRobotsTXT: true
+disableKinds:
+  - rss
+
+params:
+  defaultTheme: auto
+
+  # Post metadata
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+
+  # Table of contents
+  ShowToc: true
+  TocOpen: false
+
+  # Homepage content
+  mainSections:
+    - posts
+
+  homeInfoParams:
+    Title: "Sanket Bijawe"
+    Content: "The 2am Writings"
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+
+  label:
+    text: "Sanket Bijawe"
+    url: "/"
+
+markup:
+  highlight:
+    lineNos: true
+    noClasses: false
+
+permalinks:
+  posts: "/:slug/"
+
+outputs:
+  home:
+    - HTML
+    - JSON
+
+menu:
+  main:
+    - identifier: home
+      name: Home
+      url: /
+      weight: 1
+
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 10
+
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 20
