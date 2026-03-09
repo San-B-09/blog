@@ -1,0 +1,34 @@
+<div class="github-card" data-repo="{{ .Get "repo" }}"></div>
+
+<script>
+(async function() {
+
+  const card = document.currentScript.previousElementSibling;
+  const repo = card.dataset.repo;
+
+  const res = await fetch(`https://api.github.com/repos/${repo}`);
+  const data = await res.json();
+
+  card.innerHTML = `
+  <a href="${data.html_url}" target="_blank" style="text-decoration:none">
+    <div style="
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:16px;
+      margin:16px 0;
+    ">
+      <strong>GitHub - ${data.full_name}</strong>
+
+      <p style="margin-top:8px;color:var(--secondary)">
+        ${data.description || ""}
+      </p>
+
+      <div style="margin-top:10px;color:var(--secondary);font-size:14px">
+        github.com
+      </div>
+    </div>
+  </a>
+  `;
+
+})();
+</script>
