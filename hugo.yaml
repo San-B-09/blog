@@ -35,6 +35,8 @@ params:
   label:
     text: "Sanket Bijawe"
     url: "/"
+    
+  comments: true
 
 markup:
   highlight:
