@@ -38,6 +38,10 @@ params:
     
   comments: true
 
+  footer:
+    hideCopyright: true
+    text: 'Found a mistake? [Raise a pull request](https://github.com/San-B-09/blog/pulls)'
+
 markup:
   highlight:
     lineNos: true
