@@ -14,7 +14,7 @@ Many times, we misplace our important items and one of such is eyeglasses. In to
 
 The following figure describes the complete structure for the functioning process of Eyeglass Spotter. The operating signal to the whole system is given through the mobile app. Bluetooth is used as the wireless mode of communication for Explicit Eyeglass spotter. The mobile Bluetooth signals are received by Bluetooth module of the device and further carried to a microcontroller for processing. The processed data is transferred to a transistor for the final operation. According to the received instruction, transistor switches on or off the buzzer and L.E.D and so eyeglasses can be spotted. Bluetooth module can receive signals within the domestic range of 10–12 meters.
 
-![Complete Flow of the System diagram](/images/system_flow.png)
+![Complete Flow of the System diagram](/images/eyeglass-spotter-iot-project-system-flow.png)
 
 ---
 
@@ -34,13 +34,13 @@ The device is designed on **Printed Circuit Board (PCB)** to make the device sma
 The complete circuit diagram of eyeglass spotter device is shown bellow
 > Note: Original circuit contains ATmega328 smd in place of ATmega32 microcontroller in the circuit diagram
 
-![Circuit Diagram of Eyeglass Spotter Module](/images/circuit_diagram.png)
+![Circuit Diagram of Eyeglass Spotter Module](/images/eyeglass-spotter-iot-project-circuit-diagram.png)
 
 In the circuit diagram, the power supply is given to JP1 pin. Diode D1 is used for the safety purpose of the circuit to avoid the reverse voltage. Voltage regulator IC -U1 regulates the voltage to operating voltage i.e 5v for the microcontroller. The same power supply is given to even Bluetooth module, Buzzer and LED. Transistor-T2 operates as a switch to “on” and “off” buzzer and LED. Bluetooth module receives the wireless signals through a handset. Those signals are then executed by the microcontroller and like wisely the circuit of buzzer and L.E.D. is switched on and off through transistor. Hence, whenever “A”(1) is sent through the handset, buzzer and LED is set “on” and “B”(0) is to set buzzer and LED “off”.
 
 Following image displays the PCB design of the complete circuit, designed on Eagle Autodesk.
 
-![PCB Design](/images/pcb_design.png) 
+![PCB Design](/images/eyeglass-spotter-iot-project-pcb-design.png) 
 
 ### Microcontroller Code
 
@@ -74,13 +74,13 @@ int main(void)
 
 ## Fundamental Mobile Application
 
-![Front-end of Application](/images/app_frontend.png)
+![Front-end of Application](/images/eyeglass-spotter-iot-project-app-frontend.png)
 
 The initial version of the mobile application was built on the MIT App Inventor. The application holds a button to scan the Eyeglass Spotter device for establishing an initial connection. Also, it has two basic buttons to turn ON and OFF the LED and buzzer mounted on eyeglass spotter device. Furthermore, it includes text in big font displaying the status of the eyeglass spotter device.
 
 The backend of the application is designed using placeholders of MIT App Inventor. The first place holder functions for “SCAN” button using a `ListPicker` element for pairing the eyeglass spotter device with the handset. Furthermore, the second placeholder establishes the connection of the handset with the device Bluetooth module. The last two placeholders are used to sent the character text “A” or “B” to switch the LED and buzzer ON and OFF
 
-![Back-end of an Application](/images/app_backend.png)
+![Back-end of an Application](/images/eyeglass-spotter-iot-project-app-backend.png)
 
 
 ---

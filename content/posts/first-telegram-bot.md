@@ -27,7 +27,7 @@ To create a chatbot on Telegram, you need to contact the [BotFather](https://tel
 
 The command you need is `/newbot` which leads to the following steps to create your bot:
 
-![Telegram BotFather](/images/telegram-botfather.png)
+![Telegram BotFather](/images/first-telegram-bot-telegram-botfather.png)
 
 Your bot should have two attributes: a name and a username. The name will show up for your bot, while the username will be used for mentions and sharing.
 
@@ -261,7 +261,7 @@ ngrok http 5000
 
 Copy the https URL tunneled to localhost to the URL variable of `.env` file.
 
-![Ngrok Local Hosting](/images/telegram-first-bot-localhost.png)
+![Ngrok Local Hosting](/images/first-telegram-bot-telegram-first-bot-localhost.png)
 
 > Note: Make sure you append / at the end of URL in .env file.
 
@@ -332,7 +332,7 @@ Now go to the app page (the link of the domain you copied before) and add to the
 
 # Go talk to your BOT!
 
-![First Message](/images/first-telegram-message.gif)
+![First Message](/images/first-telegram-bot-first-telegram-message.gif)
 
 Now you can have your bot work the way you want — go ahead, make you customizations and create the next big thing!
 
