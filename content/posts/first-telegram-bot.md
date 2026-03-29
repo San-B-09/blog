@@ -329,7 +329,6 @@ remote: Verifying deploy... done.
 
 Now go to the app page (the link of the domain you copied before) and add to the end of the link `/set_webhook` so that the address will be something like `https://appname.herokuapp.com/set_webhook`. If you see `webhook setup ok`, that means you are ready to go!
 
----
 
 # Go talk to your BOT!
 
