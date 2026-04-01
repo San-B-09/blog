@@ -1,5 +1,5 @@
 ---
-title: "YouTube Content Downloader — Telegram Bot"
+title: "YouTube Content Downloader - A Telegram Bot"
 date: 2022-03-22
 slug: "youtube-content-downloader"
 description: "Build a Telegram bot that lets users instantly download YouTube videos or audio with a simple link."
