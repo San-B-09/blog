@@ -2,8 +2,8 @@
 title: "Go Asynchronous Capabilities"
 date: 2022-10-04
 slug: "go-async-capabilities"
-description: ""
-summary: ""
+description: "A quick intro to using Go routines for simple asynchronous execution in Go."
+summary: "A quick intro to using Go routines for simple asynchronous execution in Go."
 categories: ["golang"]
 draft: false
 ---
@@ -183,7 +183,7 @@ Match Index: [15 19]
 No match found in: Mercedes India CEO takes an auto-rickshaw after getting stuck in Pune traffic
 ```
 
-I hope this blog was helpful. Happy Gophing!!
+I hope this blog was helpful. Happy Gophing!
 
 
 
