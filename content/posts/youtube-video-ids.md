@@ -14,7 +14,7 @@ If you’ve ever noticed, YouTube has a unique video id for each video. It’s r
 
 To get a bit deeper, let’s take a dig at the counting systems. We generally count in Base10, that is 0 to 9. Computers count in Base2, that is 0 and 1. Base2 numbers tend to get longer quite easily and are merely readable to a normal person. So we introduced Base16, that is 0 to 9 and then A to F. Base16 is also hardly human readable but has a lower length compared to Base2 and Base10.
 
-![Counting Systems](/images/youtube-video-ids-bases.png)
+![Counting Systems](/images/youtube-video-ids-counting-system.png)
 
 How about Base64 ? That’ll be a ridiculous counting system, right ?
 
