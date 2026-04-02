@@ -2,8 +2,8 @@
 title: "YouTube’s Video Ids May Eventually Run Out?"
 date: 2022-10-11
 slug: "youtube-video-ids"
-description: "A quick intro to using Go routines for simple asynchronous execution in Go."
-summary: "A quick intro to using Go routines for simple asynchronous execution in Go."
+description: "A breakdown of how YouTube’s Base64 video IDs work and why they won’t run out anytime soon"
+summary: "A breakdown of how YouTube’s Base64 video IDs work and why they won’t run out anytime soon"
 categories: ["fascinating"]
 draft: false
 ---

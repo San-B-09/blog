@@ -2,8 +2,8 @@
 title: "Building your First Telegram Bot"
 date: 2022-02-26
 slug: "first-telegram-bot"
-description: "Dive deep into developing and deploying your very own Chatbot!"
-summary: "Dive deep into developing and deploying your very own Chatbot!"
+description: "Dive deep into developing and deploying your very own Telegram Bot!"
+summary: "Dive deep into developing and deploying your very own Telegram Bot!"
 categories: ["projects"]
 draft: false
 ---
