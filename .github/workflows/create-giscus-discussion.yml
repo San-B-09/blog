@@ -1,0 +1,59 @@
+name: Create Giscus Discussion for New Post
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/posts/**.md'
+
+permissions:
+  discussions: write
+
+jobs:
+  create-discussion:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create discussions for new posts
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          NEW_POSTS=$(git diff --name-only --diff-filter=A \
+            "${{ github.event.before }}" "${{ github.sha }}" \
+            -- 'content/posts/*.md' 2>/dev/null || \
+            git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/posts/*.md')
+
+          if [ -z "$NEW_POSTS" ]; then
+            echo "No new posts detected."
+            exit 0
+          fi
+
+          for post in $NEW_POSTS; do
+            slug=$(basename "$post" .md)
+            pathname="${slug}/"
+            description=$(grep -m1 '^description:' "$post" | sed 's/^description: *"\?\(.*\)"\?$/\1/' | sed 's/"$//')
+            body=$(printf '# %s\n%s\n\nhttps://blog.sanket0x.com/%s' "$pathname" "$description" "$pathname")
+            echo "Creating discussion for: $pathname"
+
+            gh api graphql -f query='
+              mutation($repoId: ID!, $categoryId: ID!, $title: String!, $body: String!) {
+                createDiscussion(input: {
+                  repositoryId: $repoId
+                  categoryId: $categoryId
+                  title: $title
+                  body: $body
+                }) {
+                  discussion { url }
+                }
+              }' \
+              -f repoId="R_kgDORgI0og" \
+              -f categoryId="DIC_kwDORgI0os4C34lB" \
+              -f title="$pathname" \
+              -f body="$body" \
+            && echo "Discussion created: $pathname" \
+            || echo "Skipped (may already exist): $pathname"
+          done
