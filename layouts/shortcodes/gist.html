@@ -1,0 +1,43 @@
+<div class="github-card" data-gist="{{ .Get "id" }}"></div>
+
+<script>
+(async function() {
+
+  const card = document.currentScript.previousElementSibling;
+  const gistId = card.dataset.gist;
+
+  const res = await fetch(`https://api.github.com/gists/${gistId}`);
+  const data = await res.json();
+
+  const fileNames = Object.keys(data.files);
+  const firstFile = data.files[fileNames[0]];
+  const language = firstFile.language || "";
+  const fileList = fileNames
+    .map(f => `<span style="margin-right:8px">${f}</span>`)
+    .join("");
+
+  card.innerHTML = `
+  <a href="${data.html_url}" target="_blank" style="text-decoration:none">
+    <div style="
+      border:1px solid var(--border);
+      border-radius:8px;
+      padding:16px;
+      margin:16px 0;
+    ">
+      <strong>Gist - ${data.owner.login}</strong>${language ? ` <span style="color:var(--secondary);font-weight:normal;font-size:14px">· ${language}</span>` : ""}
+
+      <p style="margin-top:8px;color:var(--secondary)">
+        ${data.description || fileList}
+      </p>
+
+      ${data.description ? `<div style="margin-top:6px;font-size:13px;color:var(--secondary)">${fileList}</div>` : ""}
+
+      <div style="margin-top:10px;color:var(--secondary);font-size:14px">
+        gist.github.com
+      </div>
+    </div>
+  </a>
+  `;
+
+})();
+</script>
