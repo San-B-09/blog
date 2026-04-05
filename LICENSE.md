@@ -1,4 +1,4 @@
-## Released under MIT License
+# Released under MIT License
 
 Copyright (c) 2026 Sanket Bijawe
 
